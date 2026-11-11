@@ -1,0 +1,28 @@
+/* Отмена всех отступов */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Шрифт Tahoma 14pt по умолчанию */
+body {
+    font-family: Tahoma, sans-serif;
+    font-size: 14pt;
+    padding: 10px; /* Внутренний отступ тела документа 10px */
+}
+
+/* Схлопывание границ у таблиц */
+table {
+    border-collapse: collapse;
+    width: 100%; /* 100% ширина для таблиц */
+}
+
+/* Сплошная граница черного цвета толщиной 1pt у ячеек */
+td, th {
+    border: 1px solid black;
+}
+
+/* Цвет фона ячеек таблицы #eee */
+td, th {
+    background-color: #eee;
+}

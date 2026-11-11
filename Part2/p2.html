@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Отправка заявки на конференцию</title>
+    <style>
+        body {
+            font-family: serif; /* На скриншоте шрифт с засечками (Times New Roman) */
+            font-size: 16px;
+            color: #000;
+            max-width: 500px;
+            margin: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        /* Стилизация fieldset, чтобы убрать стандартную рамку, как на скриншоте */
+        fieldset {
+            border: none;
+            padding: 0;
+            margin: 0 0 15px 0;
+        }
+
+        legend {
+            display: none; /* Скрываем заголовок fieldset, так как на макете используются h2 */
+        }
+
+        /* Стили для полей ввода */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        label .required {
+            color: #000; /* На макете звездочка черная */
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            max-width: 320px; /* Ограничиваем ширину, как на макете */
+            padding: 4px;
+            border: 1px solid #767676;
+            box-sizing: border-box;
+        }
+
+        input[type="text"]::placeholder {
+            color: #999;
+        }
+
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Выравнивание радиокнопок */
+        .radio-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: normal;
+        }
+
+        .radio-group label {
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+            margin-bottom: 0;
+        }
+
+        .radio-group input {
+            margin-right: 5px;
+        }
+
+        /* Блок чекбоксов */
+        .checkbox-group {
+            margin-top: 15px;
+        }
+
+        .checkbox-group label {
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .checkbox-group input {
+            margin-right: 8px;
+        }
+
+        /* Кнопка отправки */
+        button {
+            padding: 4px 12px;
+            font-size: 14px;
+            background-color: #f0f0f0;
+            border: 1px solid #767676;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        /* Подвал с примечанием */
+        .footer-note {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #333;
+            border-top: 1px solid #ccc; /* Тонкая линия над текстом */
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="#" method="post">
+        <h1>Отправка заявки на конференцию</h1>
+
+        <!-- Основные данные -->
+        <fieldset>
+            <h2>Основные данные</h2>
+            
+            <div class="form-group">
+                <label>* Фамилия, имя, отчество:</label>
+                <input type="text" name="fullname" required>
+            </div>
+
+            <div class="form-group">
+                <label>Дата рождения:</label>
+                <input type="text" name="birthdate" placeholder="дд.мм.гггг">
+            </div>
+
+            <div class="form-group">
+                <label>Пол:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gender" value="male"> мужской</label>
+                    <label><input type="radio" name="gender" value="female"> женский</label>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- Данные для создания личного кабинета -->
+        <fieldset>
+            <h2>Данные для создания личного кабинета</h2>
+
+            <div class="form-group">
+                <label>* Адрес электронной почты:</label>
+                <input type="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label>* Пароль для создания личного кабинета:</label>
+                <input type="password" name="password" required>
+            </div>
+
+            <div class="form-group">
+                <label>* Подтверждение пароля:</label>
+                <input type="password" name="password_confirm" required>
+            </div>
+        </fieldset>
+
+        <!-- Материалы для конференции -->
+        <fieldset>
+            <h2>Материалы для конференции</h2>
+
+            <div class="form-group">
+                <label>* Тема доклада:</label>
+                <input type="text" name="topic" required>
+            </div>
+
+            <div class="form-group">
+                <label>* Тезисы доклада (не более 1000 символов):</label>
+                <textarea name="abstract" maxlength="1000" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Файл презентации:</label>
+                <input type="file" name="presentation">
+            </div>
+        </fieldset>
+
+        <!-- Дополнительные опции -->
+        <fieldset>
+            <h2>Дополнительные опции</h2>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="options" value="hotel"> Проживание в отеле</label>
+                <label><input type="checkbox" name="options" value="breakfast" checked> Завтрак</label>
+                <label><input type="checkbox" name="options" value="lunch"> Обед</label>
+                <label><input type="checkbox" name="options" value="dinner"> Ужин</label>
+            </div>
+        </fieldset>
+
+        <button type="submit">Отправить</button>
+
+        <div class="footer-note">
+            * Поля, отмеченные звёздочкой, являются обязательными для заполнения
+        </div>
+    </form>
+
+</body>
+</html>

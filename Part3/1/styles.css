@@ -1,0 +1,110 @@
+/* Пункт 1. Связанные стили */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Tahoma, sans-serif;
+    font-size: 14pt;
+    padding: 10px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+/* Пункт 2. Контейнер .date */
+.date {
+    padding: 3px;
+    background-color: #B3F9D1;
+    border: 1px solid #0BDF02;
+    border-radius: 5px;
+    position: fixed;
+    left: 50%;
+    top: 20px;
+    /* Пункт 4. Центрирование по горизонтали */
+    margin-left: -73px; /* 147 / 2 = 73 */
+    /* Пункт 5. z-index */
+    z-index: 10;
+}
+
+/* Пункт 5. Контейнеры .message */
+.message {
+    padding: 3px;
+    background-color: #F9FDCE;
+    border: 1px solid #FCF594;
+    margin: 10px;
+    /* Пункт 6. Радиус углов */
+    border-radius: 5px;
+    /* Пункт 7. Относительное позиционирование */
+    position: relative;
+}
+
+/* Отступ сверху для первого сообщения */
+.message:first-of-type {
+    margin-top: 55px;
+}
+
+/* Пункт 6. Время внутри сообщений */
+.time {
+    font-size: 12pt;
+    color: #666;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Пункт 6. Отступы для входящих (in) */
+.message.in {
+    margin-right: 100px;
+    margin-left: 20px;
+}
+
+/* Пункт 6. Отступы для исходящих (out) */
+.message.out {
+    margin-left: 100px;
+    margin-right: 20px;
+}
+
+/* Пункт 7. Декоративные уголки для входящих сообщений (слева) */
+.message.in::before,
+.message.in::after {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 10px;
+    border: 10px solid transparent;
+    border-right: 10px solid #FCF594;
+}
+
+.message.in::after {
+    border-right: 10px solid #F9FDCE;
+    left: -19px;
+}
+
+/* Пункт 8. Изменение фона и рамки для исходящих сообщений */
+.message.out {
+    background-color: #BAF9F2;
+    border-color: #6BEBFB;
+}
+
+/* Пункт 8. Декоративные уголки для исходящих сообщений (справа) */
+.message.out::before,
+.message.out::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 10px;
+    border: 10px solid transparent;
+    border-left: 10px solid #6BEBFB;
+}
+
+.message.out::after {
+    border-left: 10px solid #BAF9F2;
+    right: -19px;
+}
+
+/* Сброс отступов у параграфов внутри сообщений, чтобы не было лишних пробелов */
+.message p {
+    margin: 0;
+}

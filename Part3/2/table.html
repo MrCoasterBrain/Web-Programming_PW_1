@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Стилизация таблицы</title>
+    
+    <!-- Пункт 1: Подключение связанных стилей (внешний файл) -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    
+    <!-- Пункт 2 и 4: Глобальные стили (внутри документа) -->
+    <style type="text/css">
+        /* Заголовок над таблицей (тег caption или параграф) */
+        .table-title {
+            font-weight: bold;
+            font-size: 20pt;
+            padding-bottom: 10pt; /* Нижний внутренний отступ */
+            text-align: center;
+            display: block;
+        }
+
+        /* Пункт 2: Заголовок таблицы (заголовки столбцов) */
+        th {
+            background-color: #A4FFAB; /* Зеленый фон для заголовков */
+            color: black;
+        }
+
+        /* Пункт 2: Нечетные строки сделать белыми */
+        tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        /* Пункт 2: Внутренний отступ в ячейках 3 точки */
+        td, th {
+            padding: 3pt;
+        }
+
+        /* Пункт 2: Первый столбец шириной 40 точек и центрирование текста */
+        td:first-child, th:first-child {
+            width: 40pt;
+            text-align: center;
+        }
+
+        /* Пункт 4: Глобальный стиль подсветки строки под курсором */
+        tr:hover {
+            background-color: #FFC4C5 !important; /* !important перекрывает четные/нечетные стили */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Заголовок над таблицей -->
+    <span class="table-title">Стилизованная таблица</span>
+
+    <!-- Сама таблица -->
+    <table>
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>Фамилия</th>
+                <th>Имя</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2.</td>
+                <td>Иванов</td>
+                <td>Иван</td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>Петров</td>
+                <td>Петр</td>
+            </tr>
+            <tr>
+                <td>4.</td>
+                <td>Сидоров</td>
+                <td>Сидор</td>
+            </tr>
+            <tr>
+                <td>5.</td>
+                <td>Малышкин</td>
+                <td>Малыш</td>
+            </tr>
+            <tr>
+                <td>6.</td>
+                <td>Черепахов</td>
+                <td>Черепах</td>
+            </tr>
+            <tr>
+                <td>7.</td>
+                <td>Каменев</td>
+                <td>Камень</td>
+            </tr>
+            <tr>
+                <td>8.</td>
+                <td>Трезубов</td>
+                <td>Трезуб</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

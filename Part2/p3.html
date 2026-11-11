@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опрос по статье</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        form {
+            width: 800px;
+            background-color: #b2aaaa;
+            border: solid 3px #c127c4;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 50px;
+            color: #a82b79;
+        }
+
+        fieldset {
+            margin-bottom: 20px;
+        }
+
+        label.field1 {
+            font-size: 30px;
+            width: 130px;
+            display: inline-block;
+        }
+
+        label.q {
+            font-size: 30px;
+            width: 200px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        input[type="text"] {
+            width: 500px;
+            font-size: 30px;
+        }
+
+        div.setField {
+            display: inline-block;
+        }
+
+        select {
+            width: 200px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        textarea {
+            font-size: 20px;
+        }
+
+        .resultButton {
+            text-align: center;
+            padding: 20px;
+        }
+
+        button {
+            font-size: 25px;
+            padding: 10px 20px;
+            color: #a82b79;
+        }
+
+        /* Дополнительные стили для выравнивания радиокнопок и чекбоксов */
+        .radio-group label, .checkbox-group label {
+            display: block;
+            font-size: 20px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .radio-group input, .checkbox-group input {
+            margin-right: 10px;
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+<body>
+    <form name="mainForm">
+        <h1>Опрос по статье</h1>
+        
+        <!-- Блок контактной информации (из макета сверху) -->
+        <fieldset>
+            <legend>Контактная информация</legend>
+            <label class="field1">Имя:</label>
+            <input type="text" placeholder="Введите имя"><br><br>
+            <label class="field1">E-mail:</label>
+            <input type="text" placeholder="Введите адрес электронной почты">
+        </fieldset>
+
+        <!-- Вопрос 1 (Радиокнопки) -->
+        <fieldset>
+            <legend>Вопрос 1</legend>
+            <label class="q">Flex - это ...</label> 
+            <div class="setField radio-group">
+                <label><input type="radio" name="q1" value="1"> Хорошо</label>
+                <label><input type="radio" name="q1" value="2"> Плохо</label>
+                <label><input type="radio" name="q1" value="3"> Flexa нет</label>
+            </div>
+        </fieldset>
+
+        <!-- Вопрос 2 (Чекбоксы) -->
+        <fieldset>
+            <legend>Вопрос 2</legend>
+            <label class="q">Flex - это ...</label> 
+            <div class="setField checkbox-group">
+                <label><input type="checkbox" name="q2_1" value="1"> Хорошо</label>
+                <label><input type="checkbox" name="q2_2" value="2"> Плохо</label>
+                <label><input type="checkbox" name="q2_3" value="3"> Flexa нет</label>
+            </div>
+        </fieldset>
+
+        <!-- Вопрос 3 (Выпадающий список) -->
+        <fieldset>
+            <legend>Вопрос 3</legend>
+            <label class="q">Flex - это ...</label> 
+            <div class="setField">
+                <select name="q3">
+                    <option value="good">Хорошо</option>
+                    <option value="bad">Плохо</option>
+                    <option value="none">Flexa нет</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <!-- Вопрос 4 (Текстовая область) -->
+        <fieldset>
+            <legend>Вопрос 4</legend>
+            <label class="q">Flex - это ...</label> 
+            <div class="setField">
+                <textarea rows="10" cols="45"></textarea>
+            </div>
+        </fieldset>
+
+        <!-- Кнопки -->
+        <fieldset class="resultButton">
+            <button type="submit">Отправить ответ</button>
+            <button type="reset">Очистить ответ</button>
+        </fieldset>
+    </form>
+</body>
+</html>

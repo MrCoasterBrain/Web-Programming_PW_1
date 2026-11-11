@@ -1,0 +1,79 @@
+body {
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Open Sans, Ubuntu, Fira Sans, Helvetica Neue, sans-serif;
+	font-size: 15px;
+	margin: 0;
+}
+
+.section {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	text-align: center;
+	
+	width: 1206px;
+	margin-left: auto;
+	margin-right: auto;
+
+	
+}
+
+.section-title {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 28px;
+}
+
+.experts {
+	margin-top: 50px;
+	border: 3px solid rgba(179, 184, 236, 0.5);
+	font-size: 0;
+
+}
+
+.expert {
+	
+	padding: 30px 20px;
+	width: 400px;
+
+	
+
+	
+}
+
+.expert-photo {
+	width: 150px;
+	border: 8px solid #d1d7e4;
+	border-radius: 50%;
+}
+
+.expert-name {
+	display: block;
+	font-weight: 700;
+	font-size: 22px;
+	margin-top: 10px;
+}
+
+/* --- Сетка для экспертов --- */
+
+/* Делаем контейнер .experts флекс-контейнером для выстраивания в ряд */
+.experts {
+  display: flex;
+  flex-wrap: wrap; /* Разрешаем перенос на новую строку */
+}
+
+/* Пункт 3. Карточки по 3 в ряд */
+.expert {
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box; /* Чтобы padding не увеличивал ширину */
+  text-align: center;     /* Чтобы фото и имя были по центру */
+}
+
+/* Пункт 4. Верхняя сплошная рамка 3px #d9dbf5 для всех .expert, начиная с 4-го */
+.expert:nth-child(n+4) {
+  border-top: 3px solid #d9dbf5;
+}
+
+/* Пункт 5. Фон #f0f1fb для всех четных элементов с классом .expert */
+.expert:nth-child(even) {
+  background-color: #f0f1fb;
+}

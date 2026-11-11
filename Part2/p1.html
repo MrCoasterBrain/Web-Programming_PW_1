@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма заказа</title>
+    <style>
+        body { font-family: sans-serif; }
+        fieldset { margin-bottom: 15px; width: 400px; }
+        label { display: inline-block; width: 120px; }
+        .radio-group label { display: inline; width: auto; margin-right: 10px; }
+        .checkbox-group label { display: block; width: auto; }
+        input[type="text"], select { margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Контактная информация</legend>
+            <label>Имя:</label> <input type="text"><br>
+            <label>Фамилия:</label> <input type="text"><br>
+            <label>Год рождения:</label> 
+            <select>
+                <option>2000</option>
+                <option>2001</option>
+                <option>2002</option>
+            </select><br>
+            <label>Город:</label> <input type="text"><br>
+            <label>Пол:</label> 
+            <div class="radio-group" style="display: inline;">
+                <label><input type="radio" name="gender" value="female"> Женский</label>
+                <label><input type="radio" name="gender" value="male" checked> Мужской</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Информация о заказе</legend>
+            <textarea rows="10" cols="50"></textarea>
+        </fieldset>
+        
+        <div class="checkbox-group" style="margin-bottom: 15px;">
+            <label><input type="checkbox"> Я хочу получать рекламу</label>
+            <label><input type="checkbox" checked> Я хочу, чтобы мои данные раздавались всем подряд</label>
+        </div>
+
+        <button type="reset">Очистить</button>
+        <button type="submit">Отправить!</button>
+    </form>
+</body>
+</html>
